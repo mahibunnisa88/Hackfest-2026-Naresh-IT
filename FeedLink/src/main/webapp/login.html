@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FeedLink</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: url('https://img.freepik.com/premium-photo/closeup-volunteer39s-hands-handing-plate-food-person-need-charity-food-aid-helping-those-need-distributing-food-community-providing-free-food-homeless_248459-21766.jpg') center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+header {
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    height: auto;
+    min-height: 100px;
+    color:#257688;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    z-index: 2;
+    position: relative;
+    max-width: 95%;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+header img {
+    object-fit: cover;
+}
+
+header h1 {
+    color:#257688;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    margin: 0;
+    text-align: center;
+    flex: 1;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#main {
+    width: 100%;
+    max-width: 420px;
+    z-index: 2;
+}
+
+#login-box {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 25px;
+    padding: 3rem 2.5rem;
+    animation: fadeInUp 1s ease 0.3s both;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+#login-box h2 {
+    text-align: center;
+    color: #257688;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+#login-box p {
+    text-align: center;
+    color: #257688;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color:#257688;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    color: #257688;
+}
+
+input:focus, select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+    border-color: #257688;
+}
+
+input[type="submit"] {
+    background:#257688;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background: #257688;
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    #login-box {
+        margin: 0 10px;
+    }
+}
+
+/* ✅ FIX FOR LAST DIV */
+.duties {
+    background-color:#257688;
+    position: relative;
+    z-index: 3; 
+    padding: 20px;
+}
+.footer {
+    width: 100%;
+    background-color: rgb(224, 197, 166);
+    color:#257688;
+    margin-top: 30px;
+    position: relative;
+    z-index: 3;
+    padding-top: 30px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color:#257688;
+}
+
+.footer-section p, 
+.footer-section a, 
+.footer-section li {
+    color: #257688;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 10px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+}
+</style>
+
+<body>
+
+<header style="display: flex; align-items: center; justify-content: center; gap: 5rem; background:rgb(224, 197, 166);">
+    <img src="logo.png" height="120" width="120" alt="FeedLink Logo">
+    <h1>FeedLink: Connecting Surplus Food to Needy</h1>
+</header>
+
+<div id="main">
+    <div id="login-box">
+        <h2>Login</h2>
+        <p>Please enter your Login Credentials</p>
+
+        <form action="login" method="post">
+                <div class="input-group">
+                    <label for="username">UserName</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="role">Select Role</label>
+                    <select id="role" name="role" required>
+                        <option value="rest">Restaurant Management</option>
+                        <option value="ngo">NGO Volunteer</option>
+                    </select>
+                </div>
+
+                <input type="submit" value="Login">
+            </form>
+    </div>
+</div>
+<br><br>
+
+<div class="duties">
+    <center> <h1 style="color: aliceblue;">Our Duties</h1></center>
+   
+    <img src="https://tse3.mm.bing.net/th/id/OIP.2wSLqAly4WfwTrW3eNu70gHaE3?pid=Api&P=0&h=180" alt="">
+    <img style="margin-left: 20px;" src="https://tse3.mm.bing.net/th/id/OIP.XC8u44kp1sPyi_gDeGqqogHaE7?pid=Api&P=0&h=180" alt="">
+    <img style="margin-left: 20px;" src="https://tse4.mm.bing.net/th/id/OIP.iCR0u53VzQV-whUJnMd_AgHaE8?pid=Api&P=0&h=180" alt="">
+    <img style="margin-top: 20px;" src="https://tse3.mm.bing.net/th/id/OIP.-u8HQ4Q8Ika6k8M9TR1hogHaEK?pid=Api&P=0&h=180" alt=""><br>
+    <img style="margin-top: 20px; margin-left: 20px;"src="https://tse2.mm.bing.net/th/id/OIP.gavKxAY38Zs4h3DC3qG4EgHaFj?pid=Api&P=0&h=180" alt="">
+ 
+    <img  style="margin-top: 20px; margin-left: 20px;" src="https://tse1.mm.bing.net/th/id/OIP.p0wStW-BRmWfC05K0G2iAgHaE7?pid=Api&P=0&h=180" alt="">
+    <img style="margin-top: 20px; margin-left: 20px;"src="https://tse3.mm.bing.net/th/id/OIP.iKpINOaGOeO7b3LuTyrrwAHaE7?pid=Api&P=0&h=180" alt="">
+    <img style="margin-top: 20px; margin-left: 20px;" src="https://tse1.mm.bing.net/th/id/OIP.Zhp_rZKK6lnbhPIwHax8UgHaEJ?pid=Api&P=0&h=180" alt="">
+    
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>FeedLink</h3>
+            <p>Connecting Surplus Food to Needy. Join us to make a difference.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: info@feedlink.com</p>
+            <p>Phone1: +91 939282411</p>
+            <p>Phone2: +91 8247710664</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>©FeedLink. All Rights Reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
